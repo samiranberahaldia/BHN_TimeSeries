@@ -1,5 +1,5 @@
 # BHN_TimeSeries
-Prediction of future sales 
+Prediction of daily sales count of Gift Cards in the future
 
 Key Highlights:
 
