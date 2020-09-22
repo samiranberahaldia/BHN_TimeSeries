@@ -1,0 +1,5 @@
+In this stage, the december data is scaled down in ratio with previous months. 
+
+- SARIMA is executed as a single model, in constrast to previous approach. However, it fails to capture the rise and fall of Gift card sales. Rather, it focus on local patterns and trends. 
+
+- XGBoost and Random Forest is not used, as it would be reductive. 
