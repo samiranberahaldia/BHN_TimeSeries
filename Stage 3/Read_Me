@@ -1,0 +1,7 @@
+In this case, the Data is scaled in multiple folds. 
+- In the first fold, december values are scaled with respect to other months, say November. 
+- In the second fold, the entire dataset is normalized between [0,1]
+
+The normalized data is used to train and predict using Multi-layer perceptron.
+
+Note: SARIMA, XGBoost, Random Forest is not used as the results obtained may be reductive. 
