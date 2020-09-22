@@ -1,0 +1,44 @@
+READ ME
+
+In this stage, Original data is kept intact and used for SARIMA, XGBoost, and Random Forest Models
+
+- For SARIMA Model:
+2 Models are developed to handle months for January to November, and December respectively. Later, prediction for each model is aggregated into a single DataFrame.
+
+- For XGBoost Model:
+Timeseries data is converted into data format XGBoost can learn from, i.e. into supervised learning dataset. For this purpose, previous target values i.e. prediction from earlier observation are taken as features for XGBoost algorithm to learn from. To illustrate, consider the following example, 
+Orginal Dataset
+1 100
+2 101
+3 104
+4 105
+Transformed Dataset
+-   100
+100 101
+101 104
+104 105
+105 -
+Note, the first left and bottom rigth values are left as non-numermic forms, thus needs to be treated before modeling. Therefore, value 105 can be used to predict next value of 105. Consider another another example for clarity.
+Original Dataset
+1 100
+2 101
+3 103 
+4 105
+5 106
+6 102
+7 108
+Transformed Dataset (After non-numeric value treatment)
+100 101 103
+101 103 105
+103 105 106
+105 106 102
+106 102 108
+Therefore to predict the value after 108, features 106, 102 can be used. Please note, in this case, time window/lag is taken to be 2. However, higher values of time window can be considered depending on the problem. 
+
+- For Random Forest Model:
+Similar to XGBoost algorithm learning, Timeseries data is converted to supervised learning dataset, for training and prediction. 
+
+
+Comparing all models, XGBoost seems to predict better than other models, i.e. SARIMA and Random Forest. 
+- SARIMA fails to capture non-linear relationship among time-series values, resulting in a more smooth graphs
+- Random forest provides better results than SARIMA, but produces inferior results than XGBoost in terms of solution quality and computational time.
