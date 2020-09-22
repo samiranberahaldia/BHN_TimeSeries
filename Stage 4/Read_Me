@@ -1,0 +1,13 @@
+In this stage, data is transformed in multiple folds. 
+- In the first fold, december data is scaled down based on previous month values
+- In the second fold, data is trimmed based on lower bound
+- In the third fold, data is normalized between [0-1]
+- In the the forth fold, the data undergoes aggregation, i.e. cumulative computation.
+
+The Modified data is used to train and predict models:
+- SARIMA
+- XGBoost
+- Random Forest
+- Multi-layer Perceptron
+
+Note for XGBoost, Random Forest and Perceptron model, timeseries data are coverted to supervised learning format. 
